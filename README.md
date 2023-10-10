@@ -17,8 +17,9 @@ In the paper, we covered two types of systems based on their spatial domain: Euc
 
 #### Euclidean spatial domain
 We consider the 2-dimensional Burgers' equation, represented b y the following coupled partial differential equation.
+
 $$
-\frac{\partial u}{\partial t} = -u \frac{\partial u}{\partial x} - v\frac{\partial u}{\partial y} + \nu \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right), \quad \frac{\partial v}{\partial t} = -u \frac{\partial v}{\partial x} - v\frac{\partial v}{\partial y} + \nu \left(\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2}\right).
+  \frac{\partial u}{\partial t} = -u \frac{\partial u}{\partial x} - v\frac{\partial u}{\partial y} + \nu \left(\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2}\right), \quad \frac{\partial v}{\partial t} = -u \frac{\partial v}{\partial x} - v\frac{\partial v}{\partial y} + \nu \left(\frac{\partial^2 v}{\partial x^2} + \frac{\partial^2 v}{\partial y^2}\right).
 $$
 
 Specifically, the system is defined using the following default settings:
@@ -67,6 +68,7 @@ python burgers/simulate.py --name=dataset4_test --solver=rk4 --dt_delta=0.1 --nu
 The simulation code for three different coupled system defined in graph spatial domain.
 
 1. Heat system
+   
 $$
 \frac{dT_i}{dt} = \sum_{j \in \mathcal{N}(i)} D_{ij} (T_j - T_i)
 $$
@@ -86,6 +88,7 @@ python heat/simulate.py --name=heat_test --network_type er ba rr --num_nodes 50 
 
 
 2. Kuramoto system
+   
 $$
 \frac{d \theta_i}{dt} = \omega_i + \sum_{j \in \mathcal{N}(i)} K_{ij} \sin (\theta_j - \theta_i)
 $$
@@ -105,6 +108,7 @@ python kuramoto/simulate.py --name=kuramoto_test --network_type er ba rr --num_n
 ```
 
 3. Coupled Rössler system
+   
 $$
 \frac{dx_i}{dt} = -y_i -z_i, \quad \frac{dy_i}{dt} = x_i + ay_i + \sum_{j \in \mathcal{N}(i)} K_{ij} (y_j - y_i), \quad \frac{dz_i}{dt} = b + z_i (x_i - c)
 $$
